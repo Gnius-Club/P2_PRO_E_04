@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 4: ¡Construcción del Núcleo ODS! – Parte 2</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            list-style: none;
+            display: block;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+         ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
+
+        summary {
+           display: block;
+           list-style: none;
+        }
+        summary::-webkit-details-marker {
+           display: none;
+        }
+
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content) {
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        }
+
+        window.onload = () => {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 4: ¡Construcción del Núcleo ODS! – Parte 2</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">📝 Resumen de Sesión</div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Continuar y completar la construcción de la funcionalidad central (núcleo) del Prototipo Funcional Avanzado en Scratch.</li>
+                                <li>Implementar las tareas restantes del núcleo definidas en el Mega-Backlog.</li>
+                                <li>Asegurar que el núcleo esté funcionalmente completo (o casi) al final de la sesión.</li>
+                            </ul>
+                            <strong>⏱️ Duración Estimada:</strong> 40 minutos.
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave:</strong>
+                            <ul>
+                                <li>Funcionalidad del núcleo completada (o muy avanzada) en el proyecto Scratch.</li>
+                                <li>Tareas del núcleo movidas a "¡Listo!" en el Kanban.</li>
+                                <li>Equipo preparado para la fase de integración o adición de features.</li>
+                            </ul>
+                             <strong>🛠️ Materiales/Preparación:</strong>
+                            <ul>
+                                <li>Dispositivos con acceso a Scratch y los proyectos en desarrollo (con avances de Sesión 2 y 3).</li>
+                                <li>Tablero Kanban de cada equipo actualizado.</li>
+                                <li>Acceso al T-Bar y al diseño técnico/flujo.</li>
+                                <li>Proyector o pantalla.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Desarrollo de la Sesión -->
+
+        <!-- Actividad 1: Stand-up Técnico -->
+        <div id="activity-1" class="activity">
+             <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🚦 Actividad 1: Stand-up Técnico ⏰ Tiempo: 5 minutos</div>
+             </div>
+            <div id="activity_1_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (1 min):</strong> Reunir equipos frente a Kanbans. Enfocar en completar el núcleo.
+                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 4: ¡Construcción del Núcleo - Parte 2!" y Objetivo: "¡Completar la funcionalidad central!").
+                            </td>
+                            <td>
+                                "¡Equipos Pro! Continuamos nuestra misión: ¡terminar de construir el corazón de nuestro proyecto! Hoy es la Parte 2 de la construcción del núcleo."
+                                <br><br>
+                                "Rápido check-in en el Kanban para planear el sprint final del núcleo."
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (4 min):</strong> Guiar revisión de tareas pendientes del núcleo (en 'Por Hacer' o 'Haciendo').
+                                (<strong>Proyectar Diapositiva 2</strong>: Visual del Kanban enfocando 'Por Hacer' y 'Haciendo'. Pregunta: "¿Qué tareas clave del núcleo quedan por finalizar?").
+                            </td>
+                            <td>
+                                "Miren sus columnas 'Por Hacer' y 'Haciendo'. ¿Qué tareas importantes del núcleo original (la funcionalidad central que diseñaron) nos quedan por completar hoy?"
+                                <br><br>
+                                "Arquitectos/as, ayuden a identificar esas tareas clave restantes. ¿Cuál es el plan para terminarlas hoy?"
+                                <br><br>
+                                <em>(Facilitar que cada equipo identifique las 2-3 tareas más importantes del núcleo que deben finalizar en esta sesión).</em>
+                                <br><br>
+                                "¡Objetivo claro! ¡A completar ese núcleo!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 2: ¡Más Código! Trabajo Técnico -->
+        <div id="activity-2" class="activity">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                 <div class="title">⌨️ Actividad 2: ¡Más Código! Trabajo Técnico ⏰ Tiempo: 30 minutos</div>
+             </div>
+            <div id="activity_2_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (30 min - Bloque Principal):</strong> Equipos finalizan programación del núcleo. Facilitador circula, apoya y asegura foco en completar funcionalidad central. Roles interactúan.
+                                (<strong>Proyectar Diapositiva 3</strong>: Recordatorio visual de roles Pro interactuando + icono de "Finalizar/Completar" 🏁).
+                            </td>
+                            <td>
+                                "¡Sprint final del núcleo, equipos! Tienen 30 minutos para concentrarse en esas tareas restantes y completar la funcionalidad central de su prototipo."
+                                <br><br>
+                                "<strong>Programadores/as:</strong> ¡A implementar esas últimas piezas clave del código del núcleo!"
+                                <br><br>
+                                "<strong>Testers:</strong> ¡Pruebas continuas! A medida que se completan partes, verifiquen que funcionan y que se integran bien con lo ya hecho. ¡Busquen errores!"
+                                <br><br>
+                                "<strong>Arquitectos/as:</strong> ¡Mantengan la visión global del núcleo! Asegúrense de que todas las partes encajen según el diseño. Gestionen el Kanban y ayuden a priorizar si surgen imprevistos."
+                                <br><br>
+                                "¡El objetivo es tener un núcleo funcionalmente completo al final de estos 30 minutos!"
+                                <br><br>
+                                <em>(Circular activamente. Ayudar a resolver últimos bloqueos técnicos. Recordarles el objetivo de completar el núcleo. Fomentar la colaboración para integrar las últimas piezas).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (Integrado en los 30 min):</strong> Guiar movimiento final de tareas del núcleo en Kanban hacia "¡Listo!".
+                                (<strong>Proyectar Diapositiva 4</strong>: Visual del Kanban con flechas moviendo las últimas tareas del núcleo hacia "¡Listo! ✅").
+                            </td>
+                            <td>
+                                <em>(Mientras circulan, animar a finalizar y mover tareas):</em>
+                                <br>
+                                "¡Equipos, a medida que terminen y prueben esas últimas tareas del núcleo, no olviden moverlas a '¡Listo! (✅)' en el Kanban!"
+                                <br><br>
+                                "¡Queremos ver esa columna '¡Listo!' llenándose con las piezas clave de su funcionalidad central!"
+                                <br><br>
+                                "¡Cada tarea completada es un paso más hacia un núcleo robusto!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 3: Cierre Rápido -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">⏱️ Actividad 3: Cierre Rápido ⏰ Tiempo: 5 minutos</div>
+            </div>
+            <div id="activity_3_content" class="content">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (3 min):</strong> Actualizar Kanban. Preguntar: ¿Núcleo casi listo para integrar/expandir?
+                            </td>
+                            <td>
+                                "¡Tiempo final, Equipos Pro! Última actualización del Kanban para hoy."
+                                <br><br>
+                                "Revisen su tablero. ¿Lograron mover todas (o casi todas) las tareas definidas para el núcleo a la columna '¡Listo!'?"
+                                <br><br>
+                                "En general, ¿sienten que la funcionalidad central de su proyecto está casi lista? ¿Preparada para el siguiente paso, que será integrar o añadir más cosas?"
+                                <br><br>
+                                <em>(Hacer una verificación visual rápida del estado de los Kanbans y del sentimiento general de los equipos sobre la compleción del núcleo).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar próxima sesión (Integración o Feature 1).
+                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje "¡Núcleo (Casi) Completo! 💯 Guardar. Próxima parada: ¡Conectando Ideas / Expandiendo!").
+                            </td>
+                            <td>
+                                "¡Impresionante trabajo completando (o casi completando) el núcleo de sus proyectos hoy!"
+                                <br><br>
+                                "¡Guarden TODO su progreso AHORA MISMO!"
+                                <br><br>
+                                "Con este núcleo funcional, estamos listos para la siguiente fase emocionante: conectar todas las ideas o empezar a añadir las características adicionales que planearon."
+                                <br><br>
+                                "¡Prepárense para la Sesión 5!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
