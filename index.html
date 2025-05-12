@@ -14,12 +14,21 @@
             color: white;
             padding: 10px;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Adjusted for spacing */
             font-weight: bold;
             list-style: none;
             display: block;
+            border-radius: 5px; /* Rounded corners for banner */
         }
-        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        .content { 
+            display: none; 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            margin-bottom: 10px; 
+            border-radius: 5px; /* Rounded corners for content */
+            margin-top: -10px; /* Visual connection with banner */
+            padding-top: 20px; /* Avoid text clash */
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -43,13 +52,16 @@
         }
         .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
 
-        summary {
-           display: block;
-           list-style: none;
+        /* Making facilitator instructions clearer */
+        td em, td i { /* Style for italicized facilitator notes */
+            color: #555;
+            font-style: italic;
+            display: block; /* Put notes on new lines */
+            margin-top: 5px;
         }
-        summary::-webkit-details-marker {
-           display: none;
-        }
+        /* Ensure step <strong> tags render bold */
+        td strong { font-weight: bold; } /* General strong for keywords */
+        td > strong { display: block; margin-bottom: 5px; } /* For step headers */
 
     </style>
     <script>
@@ -69,6 +81,11 @@
             contents.forEach(content => {
                 content.style.display = 'none';
             });
+            // Open "Resumen de Sesión" by default
+            const resumenContent = document.getElementById('activity_0_content');
+            if (resumenContent) {
+                resumenContent.style.display = 'block';
+            }
         };
     </script>
 </head>
@@ -84,7 +101,7 @@
             <div class="banner" onclick="toggleContent('activity_0_content')">
                 <div class="title">📝 Resumen de Sesión</div>
             </div>
-            <div id="activity_0_content" class="content">
+            <div id="activity_0_content" class="content" style="display: block;">
                 <table>
                     <tr>
                         <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
@@ -134,8 +151,12 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (1 min):</strong> Reunir equipos frente a Kanbans. Enfocar en completar el núcleo.
-                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 4: ¡Construcción del Núcleo - Parte 2!" y Objetivo: "¡Completar la funcionalidad central!").
+                                <strong>Paso 1 (1 min):</strong>
+                                <ul>
+                                    <li>Reunir equipos frente a Kanbans.</li>
+                                    <li>Enfocar en completar el núcleo.</li>
+                                    <li><strong>Proyectar Diapositiva 1</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Equipos Pro! Continuamos nuestra misión: ¡terminar de construir el corazón de nuestro proyecto! Hoy es la Parte 2 de la construcción del núcleo."
@@ -145,8 +166,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (4 min):</strong> Guiar revisión de tareas pendientes del núcleo (en 'Por Hacer' o 'Haciendo').
-                                (<strong>Proyectar Diapositiva 2</strong>: Visual del Kanban enfocando 'Por Hacer' y 'Haciendo'. Pregunta: "¿Qué tareas clave del núcleo quedan por finalizar?").
+                                <strong>Paso 2 (4 min):</strong>
+                                <ul>
+                                    <li>Guiar revisión de tareas pendientes del núcleo (en 'Por Hacer' o 'Haciendo').</li>
+                                    <li><strong>Proyectar Diapositiva 2</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "Miren sus columnas 'Por Hacer' y 'Haciendo'. ¿Qué tareas importantes del núcleo original (la funcionalidad central que diseñaron) nos quedan por completar hoy?"
@@ -179,8 +203,13 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (30 min - Bloque Principal):</strong> Equipos finalizan programación del núcleo. Facilitador circula, apoya y asegura foco en completar funcionalidad central. Roles interactúan.
-                                (<strong>Proyectar Diapositiva 3</strong>: Recordatorio visual de roles Pro interactuando + icono de "Finalizar/Completar" 🏁).
+                                <strong>Paso 1 (30 min - Bloque Principal):</strong>
+                                <ul>
+                                    <li>Equipos finalizan programación del núcleo.</li>
+                                    <li>Facilitador circula, apoya y asegura foco en completar funcionalidad central.</li>
+                                    <li>Roles interactúan.</li>
+                                    <li><strong>Proyectar Diapositiva 3</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Sprint final del núcleo, equipos! Tienen 30 minutos para concentrarse en esas tareas restantes y completar la funcionalidad central de su prototipo."
@@ -198,8 +227,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (Integrado en los 30 min):</strong> Guiar movimiento final de tareas del núcleo en Kanban hacia "¡Listo!".
-                                (<strong>Proyectar Diapositiva 4</strong>: Visual del Kanban con flechas moviendo las últimas tareas del núcleo hacia "¡Listo! ✅").
+                                <strong>Paso 2 (Integrado en los 30 min):</strong>
+                                <ul>
+                                    <li>Guiar movimiento final de tareas del núcleo en Kanban hacia "¡Listo!".</li>
+                                    <li><strong>Proyectar Diapositiva 4</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 <em>(Mientras circulan, animar a finalizar y mover tareas):</em>
@@ -232,7 +264,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (3 min):</strong> Actualizar Kanban. Preguntar: ¿Núcleo casi listo para integrar/expandir?
+                                <strong>Paso 1 (3 min):</strong>
+                                <ul>
+                                    <li>Actualizar Kanban.</li>
+                                    <li>Preguntar: ¿Núcleo casi listo para integrar/expandir?</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Tiempo final, Equipos Pro! Última actualización del Kanban para hoy."
@@ -246,8 +282,13 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar próxima sesión (Integración o Feature 1).
-                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje "¡Núcleo (Casi) Completo! 💯 Guardar. Próxima parada: ¡Conectando Ideas / Expandiendo!").
+                                <strong>Paso 2 (2 min):</strong>
+                                <ul>
+                                    <li>Cerrar sesión.</li>
+                                    <li>Recordar guardar.</li>
+                                    <li>Anticipar próxima sesión (Integración o Feature 1).</li>
+                                    <li><strong>Proyectar Diapositiva 5</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Impresionante trabajo completando (o casi completando) el núcleo de sus proyectos hoy!"
